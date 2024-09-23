@@ -12,7 +12,7 @@ class Program
         string period;
         Console.WriteLine("Hours: " + hours);
         Console.WriteLine("Minutes: " + (militaryTime % 100));
-        if ((militaryTime % 100 < 59) && (hours > 0) && (militaryTime <= 2359))
+        if ((militaryTime % 100 <= 59 && militaryTime <= 2359 && militaryTime % 100 > 0) && (hours >= 0 &&  militaryTime % 100 < 60)))
         {
                 if (hours == 0)
                 {
