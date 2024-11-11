@@ -402,7 +402,8 @@ namespace FinalProject
         public void PrelimExam()
         {
             Console.WriteLine("Prelim Exam coding:");
-            // Prelim Exam code here
+            Console.WriteLine("Emmanuel Jr D. Misola" + " " + 17 + " " + 'M');
+            Console.WriteLine("Jules Alyssandria A. Maga" + " " + 19 + " " + 'F');
         }
 
         public void MidtermExam()
