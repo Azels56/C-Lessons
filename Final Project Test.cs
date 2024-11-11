@@ -1,164 +1,198 @@
 using System;
 
-public class Activity1
+class Activies
 {
-    int intValue = 10;
-    int intValue2 = 20;
-    public void Run()
+    public void ActivityNo1()
     {
-        Console.WriteLine ("This is a int: " + intValue);
+        Console.WriteLine("Activity 1 coding:");
+        // Activity 1 code here
     }
-}
-public class Activity2
-{
-    int intValue = 10;
-    int intValue2 = 20;
-    public void Run()
+
+    public void ActivityNo2()
     {
-        // Outputs the Integer
-        Console.WriteLine("This is a int: " + intValue);
+        Console.WriteLine("Activity 2 coding:");
+        // Activity 2 code here
+    }
+
+    public void ActivityNo3()
+    {
+        Console.WriteLine("Activity 3 coding:");
+        // Activity 3 code here
+    }
+
+    public void ActivityNo4()
+    {
+        Console.WriteLine("Activity 4 coding:");
+        // Activity 4 code here
+    }
+
+    public void ActivityNo5()
+    {
+        Console.WriteLine("Activity 5 coding:");
+        // Activity 5 code here
+    }
+
+    public void ActivityNo6()
+    {
+        Console.WriteLine("Activity 6 coding:");
+        // Activity 6 code here
+    }
+
+    public void ActivityNo7()
+    {
+        Console.WriteLine("Activity 7 coding:");
+        // Activity 7 code here
+    }
+
+    public void ActivityNo8()
+    {
+        Console.WriteLine("Activity 8 coding:");
+        // Activity 8 code here
+    }
+
+    public void PrelimExam()
+    {
+        Console.WriteLine("Prelim Exam coding:");
+        // Prelim Exam code here
+    }
+
+    public void MidtermExam()
+    {
+        Console.WriteLine("Midterm Exam coding:");
+        // Midterm Exam code here
+    }
+
+    public void SemiFinalExam()
+    {
+        Console.WriteLine("Semi Final Exam coding:");
+        // Semi Final Exam code here
     }
 }
 
-public class Activity3
+
+namespace FinalProject
 {
-    public void Run()
+    public class Program
     {
-        bool continueProgram = true;
-        while (continueProgram)
+        static void Main(string[] args)
         {
-            Console.WriteLine("1. Rectangle");
-            Console.WriteLine("2. Triangle");
-            Console.WriteLine("3. Pyramid");
-            Console.WriteLine("4. Exit");
-            Console.Write("Choose your shape: ");
-            int selection = 0;
-            string choice = Console.ReadLine();
+            int[] viewedActivities = new int[11]; // Assuming a maximum of 11 unique activities
+            int viewedCount = 0;
+            bool continueViewing = true;
 
-            if (!int.TryParse(choice, out selection))
+            while (continueViewing)
             {
-                Console.WriteLine("Invalid Input. Please Try Again.");
-                continue;
-            }
+                // Display menu
+                ShowMenu();
 
-            switch (selection)
-            {
-                case 1:
-                    Console.Write("Input your length: ");
-                    int rectanglelength = int.Parse(Console.ReadLine());
-                    Console.Write("Input your width: ");
-                    int rectanglewidth = int.Parse(Console.ReadLine());
-                    for (int i = 0; i < rectanglelength; i++)
+                // Read user input
+                Console.Write("\nPlease select which activity you want to view: ");
+                string input = Console.ReadLine();
+                Console.Clear();
+                int selectedActivity;
+
+                // Validate input
+                if (int.TryParse(input, out selectedActivity))
+                {
+                    if (selectedActivity >= 1 && selectedActivity <= 11)
                     {
-                        for (int j = 0; j < rectanglewidth; j++)
+                        // Check if the activity has already been viewed
+                        bool alreadyViewed = false;
+                        for (int i = 0; i < viewedCount; i++)
                         {
-                            Console.Write("* ");
+                            if (viewedActivities[i] == selectedActivity)
+                            {
+                                alreadyViewed = true;
+                                break;
+                            }
                         }
-                        Console.WriteLine();
+
+                        if (!alreadyViewed)
+                        {
+                            // Add to the viewed list
+                            viewedActivities[viewedCount] = selectedActivity;
+                            viewedCount++;
+
+                            // Show the selected activity or exam
+                            Console.WriteLine("\nYou are viewing Activity " + selectedActivity + "\n");
+                            switch (selectedActivity)
+                            {
+                                case 1:
+                                 
+                                    break;
+                                case 2:
+                                 
+                                    break;
+                                case 3:
+                                
+                                    break;
+                                case 4:
+                                   
+                                    break;
+                                case 5:
+                             
+                                    break;
+                                case 6:
+                               
+                                    break;
+                                case 7:
+                                  
+                                    break;
+                                case 8:
+                                  
+                                    break;
+                                case 9:
+                       
+                                    break;
+                                case 10:
+                          
+                                    break;
+                                case 11:
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("You have already viewed this activity.");
+                        }
                     }
-                    break;
-                case 2:
-                    int triangleheight = int.Parse(Console.ReadLine());
-                    for (int i = 0; i <= triangleheight; i++)
+                    else
                     {
-                        for (int j = i; j < triangleheight; j++)
-                        {
-                            Console.Write("* ");
-                        }
-                        Console.WriteLine();
+                        Console.WriteLine("Invalid Selection. Please select a number between 1 and 11.");
                     }
-                    break;
-                case 3:
-                    Console.WriteLine("Enter the height of the pyramid:");
-                    int pyramidheight = int.Parse(Console.ReadLine());
-
-                    for (int i = pyramidheight; i >= 1; i--)
-                    {
-                        for (int j = pyramidheight; j > i; j--)
-                        {
-                            Console.Write(" ");
-                        }
-                        for (int k = 1; k <= i; k++)
-                        {
-                            Console.Write("* ");
-                        }
-                        Console.WriteLine();
-                    }
-                    break;
-                case 4:
-                    continueProgram = false;
-                    break;
-                default:
-                    Console.WriteLine("Invalid Selection. Please Try Again.");
-                    continue;
-            }
-
-            if (selection != 4)
-            {
-                Console.WriteLine("Would you like to exit the activty 3? (yes/no): ");
-                string response = Console.ReadLine().ToLower();
-                continueProgram = response == "yes" == false;
-            }
-        }
-    }
-}
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input. Please enter a number.");
+                }
 
 
-
-public class Program
-{
-    static int activity1ViewCount = 0; 
-    static int activity2ViewCount = 0;
-    static int activity3ViewCount = 0;
-    public static void Main(string[] args)
-    {
-        bool continueProgram = true;
-        while (continueProgram)
-        {
-            Console.WriteLine("Viewlist: ");
-            Console.WriteLine("Activity 1 Viewed: " + activity1ViewCount + " times");
-            Console.WriteLine("Activity 2 Viewed: " + activity2ViewCount + " times");
-            Console.WriteLine("Activity 3 Viewed: " + activity3ViewCount + " times");
-            Console.Write("Insert your selection, act1, act2, act3: ");
-            int userInput = 0;
-            try
-            {
-                userInput = Convert.ToInt32(Console.ReadLine());
-            }
-            catch
-            {
-                Console.WriteLine("Invaid Input");
-                continue;
-            }
-            Console.Clear();
-            switch (userInput)
-            {
-                case 1:
-                    activity1ViewCount++;
-                    Activity1 activity1 = new Activity1();
-                    activity1.Run();
-                    break;
-                case 2:
-                    activity2ViewCount++;
-                    Activity2 activity2 = new Activity2();
-                    activity2.Run();
-                    break;
-                case 3:
-                    activity3ViewCount++;
-                    Activity3 activity3 = new Activity3();
-                    activity3.Run();
-                    break;
-                default:
-                    break;
-            }
-            if (userInput != 4)
-            {
-                Console.WriteLine("Would you like to exit the program? (yes/no): ");
-                string response = Console.ReadLine().ToLower();
-                continueProgram = response == "yes" == false;
+                // Prompt to continue
+                Console.Write("\nDo you wish to continue? (Answer yes or no): ");
+                continueViewing = Console.ReadLine().ToLower() == "yes";
                 Console.Clear();
             }
+
+            Console.WriteLine("You have viewed the following activities:\n");
+            for (int i = 0; i < viewedCount; i++)
+            {
+                Console.WriteLine("Activity " + viewedActivities[i] + "\n");
+            }
         }
 
+        static void ShowMenu()
+        {
+            Console.WriteLine("1. Activity No.1");
+            Console.WriteLine("2. Activity No.2");
+            Console.WriteLine("3. Activity No.3");
+            Console.WriteLine("4. Activity No.4");
+            Console.WriteLine("5. Activity No.5");
+            Console.WriteLine("6. Activity No.6");
+            Console.WriteLine("7. Activity No.7");
+            Console.WriteLine("8. Activity No.8");
+            Console.WriteLine("9. Prelim Exam");
+            Console.WriteLine("10. Midterm Exam");
+            Console.WriteLine("11. Semi Final Exam");
+        }
     }
 }
