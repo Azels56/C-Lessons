@@ -6,8 +6,20 @@ namespace FinalProject
     {
         public void ActivityNo1()
         {
-            Console.WriteLine("Activity 1 coding:");
+            Console.WriteLine("Activity 1 coding: \n");
             // Activity 1 code here
+            int intValue = 10;
+            string stringValue = "EMMANUEL JR D. MISOLA: BSIT - First Year";
+            char charValue = 'A';
+            double doubleValue = 10.0f;
+            long longValue = 100000000;
+            bool boolValue = true;
+
+            Console.WriteLine("This is a int: " + intValue);
+            Console.Write("This is a int: " + intValue);
+            Console.Write("This is a int: " + intValue);
+            Console.Write("This is a int: " + intValue);
+            Console.Write("This is a int: " + intValue);
         }
 
         public void ActivityNo2()
@@ -42,8 +54,31 @@ namespace FinalProject
 
         public void ActivityNo7()
         {
-            Console.WriteLine("Activity 7 coding:");
-            // Activity 7 code here
+            Console.WriteLine("Activity 7 coding: \n");
+
+            string[] labels = { "Name", "Course", "Year" };
+            string[,] students = {
+            {"Juan", "BSIT", "1st"},
+            {"Pedro", "BSCS", "2nd"},
+            {"Cecil", "BSIT", "2nd"},
+            {"Martin", "BSCS", "1st"}
+            };
+
+            foreach (var label in labels)
+            {
+                Console.Write(label + "\t");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+            for (int i = 0; i < students.GetLength(0); i++)
+            {
+                for (int j = 0; j < students.GetLength(1); j++)
+                {
+                    Console.Write(students[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
         }
 
         public void ActivityNo8()
@@ -71,7 +106,8 @@ namespace FinalProject
         }
     }
 
-    public class Program
+
+   public class Program
     {
         static void Main(string[] args)
         {
@@ -95,19 +131,6 @@ namespace FinalProject
                 {
                     if (selectedActivity >= 1 && selectedActivity <= 11)
                     {
-                        // Check if the activity has already been viewed
-                        bool alreadyViewed = false;
-                        for (int i = 0; i < viewedCount; i++)
-                        {
-                            if (viewedActivities[i] == selectedActivity)
-                            {
-                                alreadyViewed = true;
-                                break;
-                            }
-                        }
-
-                        if (!alreadyViewed)
-                        {
                             // Add to the viewed list
                             viewedActivities[viewedCount] = selectedActivity;
                             viewedCount++;
@@ -117,43 +140,38 @@ namespace FinalProject
                             switch (selectedActivity)
                             {
                                 case 1:
-                                 
+
                                     break;
                                 case 2:
-                                 
+
                                     break;
                                 case 3:
-                                
+
                                     break;
                                 case 4:
-                                   
+
                                     break;
                                 case 5:
-                             
+
                                     break;
                                 case 6:
-                               
+
                                     break;
                                 case 7:
-                                  
+
                                     break;
                                 case 8:
-                                  
+
                                     break;
                                 case 9:
-                       
+
                                     break;
                                 case 10:
-                          
+
                                     break;
                                 case 11:
                                     break;
                             }
-                        }
-                        else
-                        {
-                            Console.WriteLine("You have already viewed this activity.");
-                        }
                     }
                     else
                     {
