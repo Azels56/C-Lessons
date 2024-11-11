@@ -315,25 +315,29 @@ namespace FinalProject
                 int firstnumber = 0;
                 int secondnumber = 0;
 
-                Console.Write("\n" + "Input 1st number: ");
+                Console.Write("\nInput 1st number: ");
                 string firstinput = Console.ReadLine();
                 Console.Write("Input 2nd number: ");
                 string secondinput = Console.ReadLine();
 
                 if (!int.TryParse(firstinput, out firstnumber))
                 {
+                    Console.Clear(); // Clear the console for invalid input
                     Console.WriteLine("Invalid Number. Please Try Again.");
                     continue;
                 }
 
                 if (!int.TryParse(secondinput, out secondnumber))
                 {
+                    Console.Clear(); // Clear the console for invalid input
                     Console.WriteLine("Invalid Number. Please Try Again.");
                     continue;
                 }
 
-                Console.WriteLine("\nFirst Number: " + firstnumber);
-                Console.WriteLine("Second Number: " + secondnumber);
+                Console.Clear(); // Clear the console before displaying everything again
+                Console.WriteLine("Activity 8 coding:");
+                Console.WriteLine("\nInput 1st number: " + firstnumber);
+                Console.WriteLine("Input 2nd number: " + secondnumber);
 
                 while (true)
                 {
@@ -345,24 +349,42 @@ namespace FinalProject
                     Console.Write("\nPlease select an Option: ");
                     string choice = Console.ReadLine().ToLower();
 
+                    if (choice != "add" && choice != "sub" && choice != "mul" && choice != "div")
+                    {
+                        Console.Clear(); // Clear the console for invalid selection
+                        Console.WriteLine("Invalid selection. Please try again.\n");
+                        continue;
+                    }
+
+                    Console.Clear(); // Clear the console before displaying the result
+                    Console.WriteLine("Activity 8 coding:");
+                    Console.WriteLine("\nInput 1st number: " + firstnumber);
+                    Console.WriteLine("Input 2nd number: " + secondnumber);
+
+                    Console.WriteLine("\nOptions:");
+                    Console.WriteLine("Add - Addition");
+                    Console.WriteLine("Sub - Subtraction");
+                    Console.WriteLine("Mul - Multiplication");
+                    Console.WriteLine("Div - Division");
+                 
+                    Console.WriteLine("\nPlease select an Option: " + choice);
+
                     switch (choice)
                     {
                         case "add":
                             Console.WriteLine("\nResult is: " + MathMethods.Add(firstnumber, secondnumber) + "\n");
                             break;
                         case "sub":
-                            Console.WriteLine("\nResult is: " + MathMethods.Add(firstnumber, secondnumber) + "\n");
+                            Console.WriteLine("\nResult is: " + MathMethods.Sub(firstnumber, secondnumber) + "\n");
                             break;
                         case "mul":
-                            Console.WriteLine("\nResult is: " + MathMethods.Add(firstnumber, secondnumber) + "\n");
+                            Console.WriteLine("\nResult is: " + MathMethods.Mul(firstnumber, secondnumber) + "\n");
                             break;
                         case "div":
-                            Console.WriteLine("\nResult is: " + MathMethods.Add(firstnumber, secondnumber) + "\n");
+                            Console.WriteLine("\nResult is: " + MathMethods.Div(firstnumber, secondnumber) + "\n");
                             break;
-                        default:
-                            Console.WriteLine("Invalid input, Please try again.\n");
-                            continue;
                     }
+
                     break;
                 }
 
@@ -372,7 +394,9 @@ namespace FinalProject
                 {
                     break;
                 }
+                Console.Clear(); // Clear the console before starting a new calculation
             }
+
         }
 
         public void PrelimExam()
