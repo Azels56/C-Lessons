@@ -31,7 +31,7 @@ namespace FinalProject
 
     }
     class Activies
-    { 
+    {
         public void ActivityNo1()
         {
             Console.WriteLine("Activity 1 coding: \n");
@@ -366,7 +366,7 @@ namespace FinalProject
                     Console.WriteLine("Sub - Subtraction");
                     Console.WriteLine("Mul - Multiplication");
                     Console.WriteLine("Div - Division");
-                 
+
                     Console.WriteLine("\nPlease select an Option: " + choice);
 
                     switch (choice)
@@ -581,7 +581,7 @@ namespace FinalProject
             static void Main(string[] args)
             {
                 Activies activies = new Activies();
-                int[] viewedActivities = new int[11]; // Assuming a maximum of 11 unique activities
+                int[] viewedActivities = new int[11]; // Array to track viewed activities
                 int viewedCount = 0;
                 bool continueViewing = true;
 
@@ -601,10 +601,6 @@ namespace FinalProject
                     {
                         if (selectedActivity >= 1 && selectedActivity <= 11)
                         {
-                            // Add to the viewed list
-                            viewedActivities[viewedCount] = selectedActivity;
-                            viewedCount++;
-
                             // Show the selected activity or exam
                             Console.WriteLine("\nYou are viewing Activity " + selectedActivity + "\n");
                             switch (selectedActivity)
@@ -643,17 +639,34 @@ namespace FinalProject
                                     activies.SemiFinalExam();
                                     break;
                             }
+
+                            // Add to the viewed list if not already viewed
+                            bool alreadyViewed = false;
+                            for (int i = 0; i < viewedCount; i++)
+                            {
+                                if (viewedActivities[i] == selectedActivity)
+                                {
+                                    alreadyViewed = true;
+                                    break;
+                                }
+                            }
+                            if (!alreadyViewed)
+                            {
+                                viewedActivities[viewedCount] = selectedActivity;
+                                viewedCount++;
+                            }
                         }
                         else
                         {
+                            Console.Clear(); // Clear the console for invalid selection
                             Console.WriteLine("Invalid Selection. Please select a number between 1 and 11.");
                         }
                     }
                     else
                     {
+                        Console.Clear(); // Clear the console for invalid input
                         Console.WriteLine("Invalid Input. Please enter a number.");
                     }
-
 
                     // Prompt to continue
                     Console.Write("\nDo you wish to continue? (Answer yes or no): ");
