@@ -1,77 +1,76 @@
 using System;
 
-class Activies
-{
-    public void ActivityNo1()
-    {
-        Console.WriteLine("Activity 1 coding:");
-        // Activity 1 code here
-    }
-
-    public void ActivityNo2()
-    {
-        Console.WriteLine("Activity 2 coding:");
-        // Activity 2 code here
-    }
-
-    public void ActivityNo3()
-    {
-        Console.WriteLine("Activity 3 coding:");
-        // Activity 3 code here
-    }
-
-    public void ActivityNo4()
-    {
-        Console.WriteLine("Activity 4 coding:");
-        // Activity 4 code here
-    }
-
-    public void ActivityNo5()
-    {
-        Console.WriteLine("Activity 5 coding:");
-        // Activity 5 code here
-    }
-
-    public void ActivityNo6()
-    {
-        Console.WriteLine("Activity 6 coding:");
-        // Activity 6 code here
-    }
-
-    public void ActivityNo7()
-    {
-        Console.WriteLine("Activity 7 coding:");
-        // Activity 7 code here
-    }
-
-    public void ActivityNo8()
-    {
-        Console.WriteLine("Activity 8 coding:");
-        // Activity 8 code here
-    }
-
-    public void PrelimExam()
-    {
-        Console.WriteLine("Prelim Exam coding:");
-        // Prelim Exam code here
-    }
-
-    public void MidtermExam()
-    {
-        Console.WriteLine("Midterm Exam coding:");
-        // Midterm Exam code here
-    }
-
-    public void SemiFinalExam()
-    {
-        Console.WriteLine("Semi Final Exam coding:");
-        // Semi Final Exam code here
-    }
-}
-
-
 namespace FinalProject
 {
+    class Activies
+    {
+        public void ActivityNo1()
+        {
+            Console.WriteLine("Activity 1 coding:");
+            // Activity 1 code here
+        }
+
+        public void ActivityNo2()
+        {
+            Console.WriteLine("Activity 2 coding:");
+            // Activity 2 code here
+        }
+
+        public void ActivityNo3()
+        {
+            Console.WriteLine("Activity 3 coding:");
+            // Activity 3 code here
+        }
+
+        public void ActivityNo4()
+        {
+            Console.WriteLine("Activity 4 coding:");
+            // Activity 4 code here
+        }
+
+        public void ActivityNo5()
+        {
+            Console.WriteLine("Activity 5 coding:");
+            // Activity 5 code here
+        }
+
+        public void ActivityNo6()
+        {
+            Console.WriteLine("Activity 6 coding:");
+            // Activity 6 code here
+        }
+
+        public void ActivityNo7()
+        {
+            Console.WriteLine("Activity 7 coding:");
+            // Activity 7 code here
+        }
+
+        public void ActivityNo8()
+        {
+            Console.WriteLine("Activity 8 coding:");
+            // Activity 8 code here
+        }
+
+        public void PrelimExam()
+        {
+            Console.WriteLine("Prelim Exam coding:");
+            // Prelim Exam code here
+        }
+
+        public void MidtermExam()
+        {
+            Console.WriteLine("Midterm Exam coding:");
+            // Midterm Exam code here
+        }
+
+        public void SemiFinalExam()
+        {
+            Console.WriteLine("Semi Final Exam coding:");
+            // Semi Final Exam code here
+        }
+    }
+
     public class Program
     {
         static void Main(string[] args)
