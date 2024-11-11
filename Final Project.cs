@@ -3,7 +3,7 @@ using System.Resources;
 
 namespace FinalProject
 {
-    class Activies
+    class MathMethods
     {
         // This method adds two integers
         public static int Add(int num1, int num2)
@@ -29,6 +29,9 @@ namespace FinalProject
             return num1 / num2;
         }
 
+    }
+    class Activies
+    { 
         public void ActivityNo1()
         {
             Console.WriteLine("Activity 1 coding: \n");
@@ -409,16 +412,16 @@ namespace FinalProject
                     switch (choice)
                     {
                         case "add":
-                            Console.WriteLine("\nResult is: " + Add(firstnumber, secondnumber) + "\n");
+                            Console.WriteLine("\nResult is: " + MathMethods.Add(firstnumber, secondnumber) + "\n");
                             break;
                         case "sub":
-                            Console.WriteLine("\nResult is: " + Sub(firstnumber, secondnumber) + "\n");
+                            Console.WriteLine("\nResult is: " + MathMethods.Add(firstnumber, secondnumber) + "\n");
                             break;
                         case "mul":
-                            Console.WriteLine("\nResult is: " + Mul(firstnumber, secondnumber) + "\n");
+                            Console.WriteLine("\nResult is: " + MathMethods.Add(firstnumber, secondnumber) + "\n");
                             break;
                         case "div":
-                            Console.WriteLine("\nResult is: " + Div(firstnumber, secondnumber) + "\n");
+                            Console.WriteLine("\nResult is: " + MathMethods.Add(firstnumber, secondnumber) + "\n");
                             break;
                         default:
                             Console.WriteLine("Invalid input, Please try again.\n");
