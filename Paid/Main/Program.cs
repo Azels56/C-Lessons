@@ -2,6 +2,33 @@ using System;
 
 namespace Finals
 {
+    class Arithmetic
+    {
+        // This method adds two integers
+        public static int Addition(int num1, int num2)
+        {
+            return num1 + num2;
+        }
+
+        // This method subtracts the second integer from the first
+        public static int Subtract(int num1, int num2)
+        {
+            return num1 - num2;
+        }
+
+        // This method multiplies two integers
+        public static int Multiply(int num1, int num2)
+        {
+            return num1 * num2;
+        }
+
+        // This method divides the first integer by the second
+        public static int Division(int num1, int num2)
+        {
+            return num1 / num2;
+        }
+    }
+
     class Activities
     {
         public void ShowMenu()
@@ -18,12 +45,13 @@ namespace Finals
             Console.WriteLine("10. Midterm Exam");
             Console.WriteLine("11. Semi Final Exam");
         }
-        public void ActivityNo1()
-        {       
-            int integerVariable = 10;            
-            string nameAndCourse = "EMMANUEL JR D. MISOLA: BSIT - First Year    ";         
-            char grade = 'A';        
-            double gradePointAverage = 10.0f;         
+
+        public void Activity1()
+        {
+            int integerVariable = 10;
+            string nameAndCourse = "NAME: BSIT - First Year    ";
+            char grade = 'A';
+            double gradePointAverage = 10.0f;
             long largeNumber = 100000000;
             bool isEnrolled = true;
 
@@ -33,16 +61,16 @@ namespace Finals
             Console.WriteLine("This is a double: " + gradePointAverage);
             Console.WriteLine("This is a long: " + largeNumber);
             Console.WriteLine("This is a bool: " + isEnrolled);
-        }
+        } 
 
-        public void ActivityNo2()
+        public void Activity2()
         {
 
             // Declaring an integer variable and assigning a value
             int integerVariable = 10;
 
             // Declaring a string variable and assigning a value
-            string nameAndCourse = "UR NAME: BSIT - First Year";
+            string nameAndCourse = "NAME: BSIT - First Year";
 
             // Declaring a char variable and assigning a value
             char grade = 'A';
@@ -65,9 +93,8 @@ namespace Finals
             Console.WriteLine("This is a bool: " + isEnrolled);
         }
 
-        public void ActivityNo3()
+        public void Activity3()
         {
-
             // Calculate the sum of 10 and 15
             int sum = 10 + 15;
 
@@ -94,7 +121,7 @@ namespace Finals
             Console.WriteLine("Result of 10 raised to 5: " + powerResult);
         }
 
-        public void ActivityNo4()
+        public void Activity4()
         {
             // Uses Escape Sequence: "\" - Used to include double quotes within the string.
             Console.WriteLine("Strings should be enclosed in quotation marks like so \"this is a string\"");
@@ -104,7 +131,7 @@ namespace Finals
             Console.WriteLine("Hello \t\n\t Classmates!");
         }
 
-        public void ActivityNo5()
+        public void Activity5()
         {
             // 1st set of numbers
             int firstSetFirstNumber = 10;
@@ -167,9 +194,9 @@ namespace Finals
             FindBiggestAndSmallest(thirdSetFirstNumber, thirdSetSecondNumber, thirdSetThirdNumber, "3rd set");
         }
 
-        public void ActivityNo6()
+        public void Activity6()
         {
-            bool isContinueProgram = true; // Initialize the loop control variable
+           bool isContinueProgram = true; // Initialize the loop control variable
 
             do
             {
@@ -235,7 +262,7 @@ namespace Finals
             } while (isContinueProgram); // Continue the loop until isContinueProgram is false
         }
 
-        public void ActivityNo7()
+        public void Activity7()
         {
             // Array of labels for the columns
             string[] labels = { "Name", "Course", "Year" };
@@ -268,18 +295,18 @@ namespace Finals
             }
         }
 
-        public void ActivityNo8()
+        public void Activity8()
         {
             while (true)
             {
                 int firstNumber = 0;
                 int secondNumber = 0;
 
-                Console.Write("\nInput 1st number: ");
+                Console.Write("Input 1st number: ");
                 string firstInput = Console.ReadLine();
                 Console.Write("Input 2nd number: ");
                 string secondInput = Console.ReadLine();
-
+                
                 if (!int.TryParse(firstInput, out firstNumber))
                 {
                     Console.Clear(); // Clear the console for invalid input
@@ -295,8 +322,7 @@ namespace Finals
                 }
 
                 Console.Clear(); // Clear the console before displaying everything again
-                Console.WriteLine("Activity 8:");
-                Console.WriteLine("\nInput 1st number: " + firstNumber);
+                Console.WriteLine("Input 1st number: " + firstNumber);
                 Console.WriteLine("Input 2nd number: " + secondNumber);
 
                 while (true)
@@ -317,8 +343,7 @@ namespace Finals
                     }
 
                     Console.Clear(); // Clear the console before displaying the result
-                    Console.WriteLine("Activity 8:");
-                    Console.WriteLine("\nInput 1st number: " + firstNumber);
+                    Console.WriteLine("Input 1st number: " + firstNumber);
                     Console.WriteLine("Input 2nd number: " + secondNumber);
 
                     Console.WriteLine("\nOptions:");
@@ -352,6 +377,7 @@ namespace Finals
                 string continueChoice = Console.ReadLine().ToLower();
                 if (continueChoice != "yes")
                 {
+                    Console.Clear();
                     break;
                 }
                 Console.Clear(); // Clear the console before starting a new calculation
@@ -361,27 +387,23 @@ namespace Finals
         public void PrelimExam()
         {
             Console.WriteLine("Prelim Exam:");
-            Console.WriteLine("UR NAME" + " " + 17 + " " + 'M');
-            Console.WriteLine("ANOTHER NAME" + " " + 19 + " " + 'F');
+            Console.WriteLine("NAME" + " " + 18 + " " + 'M');
+            Console.WriteLine("NAME" + " " + 18 + " " + 'F');
         }
 
         public void MidtermExam()
         {
-            // Define the valid range for military time (00:00 - 23:59)
-            // Declare two integer variables: militaryTime and hours
-            // militaryTime represents time in HHMM format
-            int militaryTime = 5959; // Example invalid time for demonstration
+            int militaryTime = 2238; // Example valid time for demonstration
+                                     // int militaryTime = 2638; // Example invalid time for demonstration
+
             int hours = militaryTime / 100; // Extract hours from militaryTime
+            int minutes = militaryTime % 100; // Extract minutes from militaryTime
             string period; // String to hold AM or PM period
 
-            // Display the hours and minutes
-            Console.WriteLine("Hours: " + hours);
-            Console.WriteLine("Minutes: " + (militaryTime % 100));
-
             // Check if the time is valid
-            if ((militaryTime % 100 <= 59 && militaryTime <= 2359 && militaryTime % 100 > 0) && (hours >= 0 && militaryTime % 100 < 60))
+            if (militaryTime >= 0 && militaryTime <= 2359 && minutes <= 59)
             {
-                // Determine AM/PM period
+                // Determine AM/PM period and convert hours
                 if (hours == 0)
                 {
                     hours = 12; // Convert 00 hours to 12 AM
@@ -402,31 +424,23 @@ namespace Finals
                 }
 
                 // Display the standard time with appropriate format
-                if (militaryTime % 100 < 10)
+                string result = "It is " + hours + ":";
+                if (minutes < 10)
                 {
-                    // For minutes less than 10, add a leading zero
-                    Console.WriteLine("It is " + hours + ":0" + (militaryTime % 100) + period + " standard time");
+                    result += "0" + minutes; // Add a leading zero for minutes less than 10
                 }
                 else
                 {
-                    // Display the standard time without a leading zero for minutes
-                    Console.WriteLine("It is " + hours + ":" + (militaryTime % 100) + period + " standard time");
+                    result += minutes; // No leading zero needed for minutes 10 or above
                 }
-            }
-            else if (militaryTime == 0)
-            {
-                // Special case for midnight
-                Console.WriteLine("It is 12 AM standard time");
-            }
-            else if (militaryTime <= 59 && militaryTime > 0)
-            {
-                // Special case for times between 00:01 and 00:59
-                Console.WriteLine("It is 12:" + militaryTime + " AM standard time");
+                result += " " + period;
+
+                Console.WriteLine(result);
             }
             else
             {
                 // If the input time is not valid, display an error message
-                Console.WriteLine("Invalid Time");
+                Console.WriteLine("Invalid Value");
             }
         }
 
@@ -438,7 +452,7 @@ namespace Finals
             {
                 // Display the menu options
                 Console.WriteLine("1. Rectangle");
-                Console.WriteLine("2. Triangle");
+                Console.WriteLine("2. Right-Angle Triangle");
                 Console.WriteLine("3. Pyramid");
                 Console.WriteLine("4. Exit");
                 Console.Write("Choose your shape: ");
@@ -460,9 +474,20 @@ namespace Finals
                     case 1:
                         // Handle rectangle drawing
                         Console.Write("Input your length: ");
-                        int rectangleLength = int.Parse(Console.ReadLine());
+                        int rectangleLength;
+                        if (!int.TryParse(Console.ReadLine(), out rectangleLength) || rectangleLength <= 0)
+                        {
+                            Console.WriteLine("Invalid input. Length must be a positive integer.");
+                            break;
+                        }
+
                         Console.Write("Input your width: ");
-                        int rectangleWidth = int.Parse(Console.ReadLine());
+                        int rectangleWidth;
+                        if (!int.TryParse(Console.ReadLine(), out rectangleWidth) || rectangleWidth <= 0)
+                        {
+                            Console.WriteLine("Invalid input. Width must be a positive integer.");
+                            break;
+                        }
 
                         // Loop to print the rectangle shape
                         for (int i = 0; i < rectangleLength; i++)
@@ -478,12 +503,17 @@ namespace Finals
                     case 2:
                         // Handle triangle drawing
                         Console.Write("Input your height: ");
-                        int triangleHeight = int.Parse(Console.ReadLine());
+                        int triangleHeight;
+                        if (!int.TryParse(Console.ReadLine(), out triangleHeight) || triangleHeight <= 0)
+                        {
+                            Console.WriteLine("Invalid input. Height must be a positive integer.");
+                            break;
+                        }
 
                         // Loop to print the triangle shape
-                        for (int i = 0; i <= triangleHeight; i++)
+                        for (int i = 1; i <= triangleHeight; i++)
                         {
-                            for (int j = i; j < triangleHeight; j++)
+                            for (int j = 0; j < i; j++)
                             {
                                 Console.Write("* ");
                             }
@@ -493,11 +523,16 @@ namespace Finals
 
                     case 3:
                         // Handle pyramid drawing
-                        Console.WriteLine("Enter the height of the pyramid:");
-                        int pyramidHeight = int.Parse(Console.ReadLine());
+                        Console.Write("Enter the height of the pyramid: ");
+                        int pyramidHeight;
+                        if (!int.TryParse(Console.ReadLine(), out pyramidHeight) || pyramidHeight <= 0)
+                        {
+                            Console.WriteLine("Invalid input. Height must be a positive integer.");
+                            break;
+                        }
 
                         // Loop to print the pyramid shape
-                        for (int i = pyramidHeight; i >= 1; i--)
+                        for (int i = 1; i <= pyramidHeight; i++)
                         {
                             for (int j = pyramidHeight; j > i; j--)
                             {
@@ -525,120 +560,117 @@ namespace Finals
                 // Prompt user to exit or continue
                 if (userSelection != 4)
                 {
-                    Console.WriteLine("Would you like to exit the program? (yes/no): ");
+                    Console.WriteLine("Would you like to continue? (yes/no): ");
                     string userResponse = Console.ReadLine().ToLower();
-                    isContinueProgram = userResponse == "no"; // Continue if the user answers "no"
+                    isContinueProgram = userResponse == "yes"; // Continue if the user answers "yes"
+                    Console.Clear(); // Clear the console for a fresh start
                 }
             }
         }
 
-        public class Program
+        static void Main(string[] args)
         {
-            static void Main(string[] args)
+            Activities activities = new Activities();
+            int[] viewedActivities = new int[11]; // Array to track viewed activities, They are 11 activities
+            int viewedActivitiesCount = 0;
+            bool isContinueViewing = true;
+
+            while (isContinueViewing)
             {
-                Activities activities = new Activities();
-                int[] viewedActivities = new int[11]; // Array to track viewed activities, They are 11 activities
-                int viewedActivitiesCount = 0;
-                bool isContinueViewing = true;
+                // Display menu
+                activities.ShowMenu();
 
-                while (isContinueViewing)
+                // Read user input
+                Console.Write("\nPlease select which activity you want to view: ");
+                string userInput = Console.ReadLine();
+                Console.Clear();
+                int selectedActivity;
+
+                // Validate input
+                if (int.TryParse(userInput, out selectedActivity))
                 {
-                    // Display menu
-                    activities.ShowMenu();
-
-                    // Read user input
-                    Console.Write("\nPlease select which activity you want to view: ");
-                    string userInput = Console.ReadLine();
-                    Console.Clear();
-                    int selectedActivity;
-
-                    // Validate input
-                    if (int.TryParse(userInput, out selectedActivity))
+                    if (selectedActivity >= 1 && selectedActivity <= 11)
                     {
-                        if (selectedActivity >= 1 && selectedActivity <= 11)
+                        // Add to the viewed list if not already viewed
+                        bool isAlreadyViewed = false;
+                        for (int i = 0; i < viewedActivitiesCount; i++)
                         {
-                            // Add to the viewed list if not already viewed
-                            bool isAlreadyViewed = false;
-                            for (int i = 0; i < viewedActivitiesCount; i++)
+                            if (viewedActivities[i] == selectedActivity)
                             {
-                                if (viewedActivities[i] == selectedActivity)
-                                {
-                                    isAlreadyViewed = true;
-                                    break;
-                                }
+                                isAlreadyViewed = true;
+                                break;
                             }
-                            if (!isAlreadyViewed)
-                            {
-                                viewedActivities[viewedActivitiesCount] = selectedActivity;
-                                viewedActivitiesCount++;
-                            }
+                        }
+                        if (!isAlreadyViewed)
+                        {
+                            viewedActivities[viewedActivitiesCount] = selectedActivity;
+                            viewedActivitiesCount++;
+                        }
 
-                            // Show the selected activity or exam
-                            Console.WriteLine("\nYou are viewing Activity " + selectedActivity + "\n");
-                            switch (selectedActivity)
-                            {
-                                case 1:
-                                    activities.ActivityNo1();
-                                    break;
-                                case 2:
-                                    activities.ActivityNo2();
-                                    break;
-                                case 3:
-                                    activities.ActivityNo3();
-                                    break;
-                                case 4:
-                                    activities.ActivityNo4();
-                                    break;
-                                case 5:
-                                    activities.ActivityNo5();
-                                    break;
-                                case 6:
-                                    activities.ActivityNo6();
-                                    break;
-                                case 7:
-                                    activities.ActivityNo7();
-                                    break;
-                                case 8:
-                                    activities.ActivityNo8();
-                                    break;
-                                case 9:
-                                    activities.PrelimExam();
-                                    break;
-                                case 10:
-                                    activities.MidtermExam();
-                                    break;
-                                case 11:
-                                    activities.SemiFinalExam();
-                                    break;
-                            }
-                         
-                        }
-                        else
+                        // Show the selected activity or exam
+                        Console.WriteLine("You are viewing Activity " + selectedActivity + "\n");
+                        switch (selectedActivity)
                         {
-                            Console.Clear(); // Clear the console for invalid selection
-                            Console.WriteLine("Invalid Selection. Please select a number between 1 and 11.");
+                            case 1:
+                                activities.Activity1();
+                                break;
+                            case 2:
+                                activities.Activity2();
+                                break;
+                            case 3:
+                                activities.Activity3();
+                                break;
+                            case 4:
+                                activities.Activity4();
+                                break;
+                            case 5:
+                                activities.Activity5();
+                                break;
+                            case 6:
+                                activities.Activity6();
+                                break;
+                            case 7:
+                                activities.Activity7();
+                                break;
+                            case 8:
+                                activities.Activity8();
+                                break;
+                            case 9:
+                                activities.PrelimExam();
+                                break;
+                            case 10:
+                                activities.MidtermExam();
+                                break;
+                            case 11:
+                                activities.SemiFinalExam();
+                                break;
                         }
+
+                        // Prompt to continue
+                        Console.Write("\nDo you wish to continue? (Answer yes or no): ");
+                        isContinueViewing = Console.ReadLine().ToLower() == "yes";
+                        Console.Clear();
                     }
                     else
                     {
-                        Console.Clear(); // Clear the console for invalid input
-                        Console.WriteLine("Invalid Input. Please enter a number.");
+                        Console.Clear(); // Clear the console for invalid selection
+                        Console.WriteLine("Invalid Selection. Please select a number between 1 and 11. \n");
                     }
-
-                    // Prompt to continue
-                    Console.Write("\nDo you wish to continue? (Answer yes or no): ");
-                    isContinueViewing = Console.ReadLine().ToLower() == "yes";
-                    Console.Clear();
                 }
-
-                Console.WriteLine("You have viewed the following activities:\n");
-                for (int i = 0; i < viewedActivitiesCount; i++)
+                else
                 {
-                    Console.WriteLine("Activity " + viewedActivities[i] + "\n");
+                    Console.Clear(); // Clear the console for invalid input
+                    Console.WriteLine("Invalid Input. Please enter a number. \n");
                 }
-
-                Console.WriteLine("Program ends");
             }
+
+            Console.WriteLine("You have viewed the following activities:\n");
+            for (int i = 0; i < viewedActivitiesCount; i++)
+            {
+                Console.WriteLine("Activity " + viewedActivities[i] + "\n");
+            }
+
+            Console.WriteLine("Program ends");
         }
     }
 }
