@@ -335,6 +335,7 @@ namespace Finals
                     Console.Write("\nPlease select an Option: ");
                     string operationChoice = Console.ReadLine().ToLower();
 
+
                     if (operationChoice != "add" && operationChoice != "sub" && operationChoice != "mul" && operationChoice != "div")
                     {
                         Console.Clear(); // Clear the console for invalid selection
