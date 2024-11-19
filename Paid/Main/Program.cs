@@ -31,31 +31,16 @@ namespace Finals
 
     class Activities
     {
-        public void ShowMenu()
-        {
-            Console.WriteLine("1. Activity No.1");
-            Console.WriteLine("2. Activity No.2");
-            Console.WriteLine("3. Activity No.3");
-            Console.WriteLine("4. Activity No.4");
-            Console.WriteLine("5. Activity No.5");
-            Console.WriteLine("6. Activity No.6");
-            Console.WriteLine("7. Activity No.7");
-            Console.WriteLine("8. Activity No.8");
-            Console.WriteLine("9. Prelim Exam");
-            Console.WriteLine("10. Midterm Exam");
-            Console.WriteLine("11. Semi Final Exam");
-        }
-
         public void Activity1()
         {
-            int integerVariable = 10;
+            int age = 19;
             string nameAndCourse = "NAME: BSIT - First Year    ";
             char grade = 'A';
             double gradePointAverage = 10.0f;
             long largeNumber = 100000000;
             bool isEnrolled = true;
 
-            Console.WriteLine("This is an int: " + integerVariable);
+            Console.WriteLine("This is an int: " + age);
             Console.WriteLine("This is a string: " + nameAndCourse);
             Console.WriteLine("This is a char: " + grade);
             Console.WriteLine("This is a double: " + gradePointAverage);
@@ -65,9 +50,8 @@ namespace Finals
 
         public void Activity2()
         {
-
             // Declaring an integer variable and assigning a value
-            int integerVariable = 10;
+            int age = 17;
 
             // Declaring a string variable and assigning a value
             string nameAndCourse = "NAME: BSIT - First Year";
@@ -85,7 +69,7 @@ namespace Finals
             bool isEnrolled = true;
 
             // Outputting the values of the variables to the console
-            Console.WriteLine("This is an int: " + integerVariable);
+            Console.WriteLine("This is an int: " + age);
             Console.WriteLine("This is a string: " + nameAndCourse);
             Console.WriteLine("This is a char: " + grade);
             Console.WriteLine("This is a double: " + gradePointAverage);
@@ -305,21 +289,7 @@ namespace Finals
                 Console.Write("Input 1st number: ");
                 string firstInput = Console.ReadLine();
                 Console.Write("Input 2nd number: ");
-                string secondInput = Console.ReadLine();
-                
-                if (!int.TryParse(firstInput, out firstNumber))
-                {
-                    Console.Clear(); // Clear the console for invalid input
-                    Console.WriteLine("Invalid Number. Please Try Again.");
-                    continue;
-                }
-
-                if (!int.TryParse(secondInput, out secondNumber))
-                {
-                    Console.Clear(); // Clear the console for invalid input
-                    Console.WriteLine("Invalid Number. Please Try Again.");
-                    continue;
-                }
+                string secondInput = Console.ReadLine();               
 
                 Console.Clear(); // Clear the console before displaying everything again
                 Console.WriteLine("Input 1st number: " + firstNumber);
@@ -387,60 +357,43 @@ namespace Finals
 
         public void PrelimExam()
         {
-            Console.WriteLine("Prelim Exam:");
             Console.WriteLine("NAME" + " " + 18 + " " + 'M');
             Console.WriteLine("NAME" + " " + 18 + " " + 'F');
         }
 
         public void MidtermExam()
         {
-            int militaryTime = 2238; // Example valid time for demonstration
-                                     // int militaryTime = 2638; // Example invalid time for demonstration
+            // 00:00 to 23:59
+            int time = 2333; // Military time
+            int hours = time / 100; // Extract hours
+            string period = hours >= 12 ? "PM" : "AM"; // Determine if the time is AM or PM
 
-            int hours = militaryTime / 100; // Extract hours from militaryTime
-            int minutes = militaryTime % 100; // Extract minutes from militaryTime
-            string period; // String to hold AM or PM period
-
-            // Check if the time is valid
-            if (militaryTime >= 0 && militaryTime <= 2359 && minutes <= 59)
+            // Check if the time input is within the valid range and the minutes part is valid
+            if ((time >= 0 && time <= 2359) && (time % 100 < 60))
             {
-                // Determine AM/PM period and convert hours
-                if (hours == 0)
+                if (time == 0)
                 {
-                    hours = 12; // Convert 00 hours to 12 AM
-                    period = "AM";
+                    // Handle special case for midnight (00:00)
+                    Console.WriteLine("It is 12:00 AM standard time.");
                 }
-                else if (hours < 12)
+                else if (time > 0 && time <= 59)
                 {
-                    period = "AM"; // Time is in the AM period
-                }
-                else if (hours == 12)
-                {
-                    period = "PM"; // 12 hours is 12 PM
-                }
-                else // If hours is greater than 12, subtract 12 from hours and append “PM”
-                {
-                    hours -= 12;
-                    period = "PM";
-                }
-
-                // Display the standard time with appropriate format
-                string result = "It is " + hours + ":";
-                if (minutes < 10)
-                {
-                    result += "0" + minutes; // Add a leading zero for minutes less than 10
+                    // Handle special case for times between 00:01 and 00:59
+                    Console.WriteLine("It is 12:" + (time < 10 ? "0" : "") + time + " AM standard time.");
                 }
                 else
                 {
-                    result += minutes; // No leading zero needed for minutes 10 or above
-                }
-                result += " " + period;
+                    // Adjust hours for 12-hour format
+                    if (hours > 12) hours -= 12;
+                    if (hours == 0) hours = 12;
 
-                Console.WriteLine(result);
+                    // Manual formatting of minutes with leading zero if needed
+                    Console.WriteLine("It is " + hours + ":" + (time % 100 < 10 ? "0" : "") + (time % 100) + " " + period + " standard time.");
+                }
             }
             else
             {
-                // If the input time is not valid, display an error message
+                // Handle invalid time input
                 Console.WriteLine("Invalid Value");
             }
         }
@@ -572,14 +525,24 @@ namespace Finals
         static void Main(string[] args)
         {
             Activities activities = new Activities();
-            int[] viewedActivities = new int[11]; // Array to track viewed activities, They are 11 activities
+            int[] viewedActivities = new int[11]; // Array viewed activities (11)
             int viewedActivitiesCount = 0;
             bool isContinueViewing = true;
 
             while (isContinueViewing)
             {
                 // Display menu
-                activities.ShowMenu();
+                Console.WriteLine("1. Activity No.1");
+                Console.WriteLine("2. Activity No.2");
+                Console.WriteLine("3. Activity No.3");
+                Console.WriteLine("4. Activity No.4");
+                Console.WriteLine("5. Activity No.5");
+                Console.WriteLine("6. Activity No.6");
+                Console.WriteLine("7. Activity No.7");
+                Console.WriteLine("8. Activity No.8");
+                Console.WriteLine("9. Prelim Exam");
+                Console.WriteLine("10. Midterm Exam");
+                Console.WriteLine("11. Semi Final Exam");
 
                 // Read user input
                 Console.Write("\nPlease select which activity you want to view: ");
