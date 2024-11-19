@@ -180,66 +180,44 @@ namespace Finals
 
         public void Activity6()
         {
-           bool isContinueProgram = true; // Initialize the loop control variable
+            bool isContinueProgram = true; // Initialize the loop control variable
 
             do
             {
-                try
+                Console.Write("Enter Age: "); // Prompt the user for input
+                if (int.TryParse(Console.ReadLine(), out int age))
                 {
-                    Console.Write("Enter Age: "); // Prompt the user for input
-                    string userInput = Console.ReadLine(); // Read the input from the user
-
-                    // Check if input is null
-                    if (userInput == null)
+                    // Determine the age group based on the entered age using switch
+                    switch (age)
                     {
-                        Console.WriteLine("Invalid input. Please enter a valid integer.");
-                        continue;
+                        case int n when n >= 0 && n <= 6:
+                            Console.WriteLine("Age group: Toddler");
+                            break;
+                        case int n when n >= 7 && n <= 12:
+                            Console.WriteLine("Age group: Kid");
+                            break;
+                        case int n when n >= 13 && n <= 19:
+                            Console.WriteLine("Age group: Teen");
+                            break;
+                        case int n when n >= 20 && n <= 30:
+                            Console.WriteLine("Age group: Young Adult");
+                            break;
+                        case int n when n >= 31 && n <= 59:
+                            Console.WriteLine("Age group: Adult");
+                            break;
+                        case int n when n >= 60:
+                            Console.WriteLine("Age group: Senior");
+                            break;
+                        default:
+                            Console.WriteLine("Invalid input.");
+                            break;
                     }
 
-                    // Try to parse the input to an integer
-                    if (!int.TryParse(userInput, out int age))
-                    {
-                        Console.WriteLine("Invalid input. Please enter a valid integer.");
-                        continue;
-                    }
-
-                    else
-                    {
-                        // Determine the age group based on the entered age
-                        switch (age)
-                        {
-                            case int userAge when (userAge >= 0 && userAge <= 6):
-                                Console.WriteLine("Age group: Toddler");
-                                break;
-                            case int userAge when (userAge >= 7 && userAge <= 12):
-                                Console.WriteLine("Age group: Kid");
-                                break;
-                            case int userAge when (userAge >= 13 && userAge <= 19):
-                                Console.WriteLine("Age group: Teen");
-                                break;
-                            case int userAge when (userAge >= 20 && userAge <= 30):
-                                Console.WriteLine("Age group: Young Adult");
-                                break;
-                            case int userAge when (userAge >= 31 && userAge <= 59):
-                                Console.WriteLine("Age group: Adult");
-                                break;
-                            case int userAge when (userAge >= 60):
-                                Console.WriteLine("Age group: Senior");
-                                break;
-                            default:
-                                Console.WriteLine("Invalid input.");
-                                break;
-                        }
-                    }
+                    // Prompt for another calculation
                     Console.Write("Do you want to perform another calculation? (yes/no): ");
-                    string continueChoice = Console.ReadLine().ToLower();
-                    if (continueChoice != "yes")
-                    {
-                        break;
-                    }
+                    isContinueProgram = Console.ReadLine().ToLower() == "yes";
                 }
-                // Handle exceptions for invalid format
-                catch (Exception)
+                else
                 {
                     Console.WriteLine("Invalid input. Please enter a valid integer.");
                 }
@@ -485,8 +463,8 @@ namespace Finals
                             break;
                         }
 
-                        // Loop to print the pyramid shape
-                        for (int i = 1; i <= pyramidHeight; i++)
+                        // Loop to print the pyramid shape upside down
+                        for (int i = pyramidHeight; i > 0; i--)
                         {
                             for (int j = pyramidHeight; j > i; j--)
                             {
@@ -514,7 +492,7 @@ namespace Finals
                 // Prompt user to exit or continue
                 if (userSelection != 4)
                 {
-                    Console.WriteLine("Would you like to continue? (yes/no): ");
+                    Console.WriteLine("Would you like to continue? (Answer yes or no): ");
                     string userResponse = Console.ReadLine().ToLower();
                     isContinueProgram = userResponse == "yes"; // Continue if the user answers "yes"
                     Console.Clear(); // Clear the console for a fresh start
