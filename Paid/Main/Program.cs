@@ -118,64 +118,136 @@ namespace Finals
         public void Activity5()
         {
             // 1st set of numbers
-            int firstSetFirstNumber = 10;
-            int firstSetSecondNumber = 101;
-            int firstSetThirdNumber = 11;
+            int FirstSet_1stNumber = 10;
+            int FirstSet_2ndNumber = 101;
+            int FirstSet_3rdNumber = 11;
 
             // 2nd set of numbers
-            int secondSetFirstNumber = 23;
-            int secondSetSecondNumber = 3;
-            int secondSetThirdNumber = 12;
+            int SecondSet_1stNumber = 23;
+            int SecondSet_2ndNumber = 3;
+            int SecondSet_3rdNumber = 12;
 
             // 3rd set of numbers
-            int thirdSetFirstNumber = 9;
-            int thirdSetSecondNumber = 11;
-            int thirdSetThirdNumber = 24;
+            int ThirdSet_1stNumber = 9;
+            int ThirdSet_2ndNumber = 11;
+            int ThirdSet_3rdNumber = 24;
 
-            // Method to find the biggest and smallest number in a set
-            void FindBiggestAndSmallest(int num1, int num2, int num3, string setName)
+            // Variables to store the biggest and smallest numbers from each set
+            int biggestNumber = 0;
+            int smallestNumber = 0;
+
+            // Finding the biggest and smallest numbers for the first set of numbers
+            if (FirstSet_1stNumber >= FirstSet_2ndNumber && FirstSet_1stNumber >= FirstSet_3rdNumber)
             {
-                int biggestNumber;
-                int smallestNumber;
-
-                // Finding the biggest number
-                if (num1 >= num2 && num1 >= num3)
-                {
-                    biggestNumber = num1;
-                }
-                else if (num2 >= num1 && num2 >= num3)
-                {
-                    biggestNumber = num2;
-                }
-                else
-                {
-                    biggestNumber = num3;
-                }
-
-                // Finding the smallest number
-                if (num1 <= num2 && num1 <= num3)
-                {
-                    smallestNumber = num1;
-                }
-                else if (num2 <= num1 && num2 <= num3)
-                {
-                    smallestNumber = num2;
-                }
-                else
-                {
-                    smallestNumber = num3;
-                }
-
-                // Output for the set
-                Console.WriteLine(setName + ": " + num1 + ", " + num2 + ", " + num3);
-                Console.WriteLine("The Biggest Number: " + biggestNumber + "\nThe Smallest Number: " + smallestNumber);
-                Console.WriteLine();
+                // If the first number is the biggest
+                biggestNumber = FirstSet_1stNumber;
+            }
+            else if (FirstSet_2ndNumber >= FirstSet_1stNumber && FirstSet_2ndNumber >= FirstSet_3rdNumber)
+            {
+                // If the second number is the biggest
+                biggestNumber = FirstSet_2ndNumber;
+            }
+            else
+            {
+                // If the third number is the biggest
+                biggestNumber = FirstSet_3rdNumber;
             }
 
-            // Call the method for each set
-            FindBiggestAndSmallest(firstSetFirstNumber, firstSetSecondNumber, firstSetThirdNumber, "1st set");
-            FindBiggestAndSmallest(secondSetFirstNumber, secondSetSecondNumber, secondSetThirdNumber, "2nd set");
-            FindBiggestAndSmallest(thirdSetFirstNumber, thirdSetSecondNumber, thirdSetThirdNumber, "3rd set");
+            if (FirstSet_1stNumber <= FirstSet_2ndNumber && FirstSet_1stNumber <= FirstSet_3rdNumber)
+            {
+                // If the first number is the smallest
+                smallestNumber = FirstSet_1stNumber;
+            }
+            else if (FirstSet_2ndNumber <= FirstSet_1stNumber && FirstSet_2ndNumber <= FirstSet_3rdNumber)
+            {
+                // If the second number is the smallest
+                smallestNumber = FirstSet_2ndNumber;
+            }
+            else
+            {
+                // If the third number is the smallest
+                smallestNumber = FirstSet_3rdNumber;
+            }
+
+            // Output for the first set
+            Console.WriteLine("1st set: " + FirstSet_1stNumber + ", " + FirstSet_2ndNumber + ", " + FirstSet_3rdNumber);
+            Console.WriteLine("The Biggest Number: " + biggestNumber + "\nThe Smallest Number: " + smallestNumber);
+            Console.WriteLine();
+
+            // Finding the biggest and smallest numbers for the second set of numbers
+            if (SecondSet_1stNumber >= SecondSet_2ndNumber && SecondSet_1stNumber >= SecondSet_3rdNumber)
+            {
+                // If the first number is the biggest
+                biggestNumber = SecondSet_1stNumber;
+            }
+            else if (SecondSet_2ndNumber >= SecondSet_1stNumber && SecondSet_2ndNumber >= SecondSet_3rdNumber)
+            {
+                // If the second number is the biggest
+                biggestNumber = SecondSet_2ndNumber;
+            }
+            else
+            {
+                // If the third number is the biggest
+                biggestNumber = SecondSet_3rdNumber;
+            }
+
+            if (SecondSet_1stNumber <= SecondSet_2ndNumber && SecondSet_1stNumber <= SecondSet_3rdNumber)
+            {
+                // If the first number is the smallest
+                smallestNumber = SecondSet_1stNumber;
+            }
+            else if (SecondSet_2ndNumber <= SecondSet_1stNumber && SecondSet_2ndNumber <= SecondSet_3rdNumber)
+            {
+                // If the second number is the smallest
+                smallestNumber = SecondSet_2ndNumber;
+            }
+            else
+            {
+                // If the third number is the smallest
+                smallestNumber = SecondSet_3rdNumber;
+            }
+
+            // Output for the second set
+            Console.WriteLine("2nd set: " + SecondSet_1stNumber + ", " + SecondSet_2ndNumber + ", " + SecondSet_3rdNumber);
+            Console.WriteLine("The Biggest Number: " + biggestNumber + "\nThe Smallest Number: " + smallestNumber);
+            Console.WriteLine();
+
+            // Finding the biggest and smallest numbers for the third set of numbers
+            if (ThirdSet_1stNumber >= ThirdSet_2ndNumber && ThirdSet_1stNumber >= ThirdSet_3rdNumber)
+            {
+                // If the first number is the biggest
+                biggestNumber = ThirdSet_1stNumber;
+            }
+            else if (ThirdSet_2ndNumber >= ThirdSet_1stNumber && ThirdSet_2ndNumber >= ThirdSet_3rdNumber)
+            {
+                // If the second number is the biggest
+                biggestNumber = ThirdSet_2ndNumber;
+            }
+            else
+            {
+                // If the third number is the biggest
+                biggestNumber = ThirdSet_3rdNumber;
+            }
+
+            if (ThirdSet_1stNumber <= ThirdSet_2ndNumber && ThirdSet_1stNumber <= ThirdSet_3rdNumber)
+            {
+                // If the first number is the smallest
+                smallestNumber = ThirdSet_1stNumber;
+            }
+            else if (ThirdSet_2ndNumber <= ThirdSet_1stNumber && ThirdSet_2ndNumber <= ThirdSet_3rdNumber)
+            {
+                // If the second number is the smallest
+                smallestNumber = ThirdSet_2ndNumber;
+            }
+            else
+            {
+                // If the third number is the smallest
+                smallestNumber = ThirdSet_3rdNumber;
+            }
+
+            // Output for the third set
+            Console.WriteLine("3rd set: " + ThirdSet_1stNumber + ", " + ThirdSet_2ndNumber + ", " + ThirdSet_3rdNumber);
+            Console.WriteLine("The Biggest Number: " + biggestNumber + "\nThe Smallest Number: " + smallestNumber);
         }
 
         public void Activity6()
