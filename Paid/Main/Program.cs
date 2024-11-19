@@ -36,13 +36,15 @@ namespace Finals
             int age = 19;
             string nameAndCourse = "NAME: BSIT - First Year    ";
             char grade = 'A';
-            double gradePointAverage = 10.0f;
+            float score = 49.5f;
+            double gradePointAverage = 10.0f;          
             long largeNumber = 100000000;
             bool isEnrolled = true;
 
             Console.WriteLine("This is an int: " + age);
             Console.WriteLine("This is a string: " + nameAndCourse);
             Console.WriteLine("This is a char: " + grade);
+            Console.WriteLine("This is a float: " + score);
             Console.WriteLine("This is a double: " + gradePointAverage);
             Console.WriteLine("This is a long: " + largeNumber);
             Console.WriteLine("This is a bool: " + isEnrolled);
@@ -59,6 +61,9 @@ namespace Finals
             // Declaring a char variable and assigning a value
             char grade = 'A';
 
+            // Declaring a float variable and assigning a value
+            float score = 49.5f;
+
             // Declaring a double variable and assigning a value
             double gradePointAverage = 10.0f;
 
@@ -72,6 +77,7 @@ namespace Finals
             Console.WriteLine("This is an int: " + age);
             Console.WriteLine("This is a string: " + nameAndCourse);
             Console.WriteLine("This is a char: " + grade);
+            Console.WriteLine("This is a float: " + score);
             Console.WriteLine("This is a double: " + gradePointAverage);
             Console.WriteLine("This is a long: " + largeNumber);
             Console.WriteLine("This is a bool: " + isEnrolled);
@@ -339,7 +345,21 @@ namespace Finals
                 Console.Write("Input 1st number: ");
                 string firstInput = Console.ReadLine();
                 Console.Write("Input 2nd number: ");
-                string secondInput = Console.ReadLine();               
+                string secondInput = Console.ReadLine();
+
+                if (!int.TryParse(firstInput, out firstNumber))
+                {
+                    Console.Clear(); // Clear the console for invalid input
+                    Console.WriteLine("Invalid Number. Please Try Again.");
+                    continue;
+                }
+
+                if (!int.TryParse(secondInput, out secondNumber))
+                {
+                    Console.Clear(); // Clear the console for invalid input
+                    Console.WriteLine("Invalid Number. Please Try Again.");
+                    continue;
+                }
 
                 Console.Clear(); // Clear the console before displaying everything again
                 Console.WriteLine("Input 1st number: " + firstNumber);
