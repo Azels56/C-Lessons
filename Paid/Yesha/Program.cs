@@ -1,8 +1,8 @@
 using System;
 
-namespace FinalsProject
+namespace FinalProject
 {
-    class MathMethods
+    class Arithmetic
     {
         // This method adds two integers
         public static int Addition(int num1, int num2)
@@ -34,11 +34,11 @@ namespace FinalsProject
         public void Activity1()
         {
             int age = 18;
-            string nameCourseYear = "Yesha Mae Vengco - BSIT: First Year";
+            string nameCourseYear = "Yesha Mae Vengco & Florrie Mae Gapuz - BSIT: First Year";
             char grade = 'A';
             float score = 40.2f;
             double gradeAverage = 10.0f;
-            long largeNumber = 9000000000000;
+            long largeNumber = 100000000000000;
             bool isEnrolled = true;
 
             Console.WriteLine("This is an int: " + age);
@@ -56,7 +56,7 @@ namespace FinalsProject
             int age = 18;
 
             // Declaring a string variable and assigning a value
-            string nameCourseYear = "Yesha Mae Vengco - BSIT: First Year";
+            string nameCourseYear = "Yesha Mae Vengco & Florrie Mae Gapuz - BSIT: First Year";
 
             // Declaring a char variable and assigning a value
             char grade = 'A';
@@ -68,7 +68,7 @@ namespace FinalsProject
             double gradeAverage = 10.0f;
 
             // Declaring a long variable and assigning a value
-            long largeNumber = 9000000000000;
+            long largeNumber = 100000000000000;
 
             // Declaring a bool variable and assigning a value
             bool isEnrolled = true;
@@ -329,7 +329,8 @@ namespace FinalsProject
 
         public void PrelimExam()
         {
-            Console.WriteLine("Patrick Q. Malana" + " " + 18 + " " + 'M');
+            Console.WriteLine("Yesha Mae Vengco" + " " + 18 + " " + 'F');
+            Console.WriteLine("Florrie Mae Gapuz" + " " + 18 + " " + 'F');
         }
 
         public void MidtermExam()
