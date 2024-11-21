@@ -35,7 +35,7 @@ namespace Finals
         public void Activity1()
         {
             int studentAge = 21;
-            string studentNameAndCourse = "NAME: BLANK - BSIT, First Year";
+            string studentNameAndCourse = "NAME: VEGA, KYAN TYREE C & ZENAROSA, JAY HANS O. - BSIT, First Year";
             char studentGrade = 'B';
             float studentScore = 75.3f;
             double studentGPA = 3.6;
@@ -55,7 +55,7 @@ namespace Finals
         {
             // Variable declarations with initial values
             int studentAge = 21; // Student's age
-            string studentNameAndCourse = "NAME: BLANK - BSIT, First Year"; // Student's name and course
+            string studentNameAndCourse = "NAME: VEGA, KYAN TYREE C & ZENAROSA, JAY HANS O. - BSIT, First Year"; // Student's name and course
             char studentGrade = 'B'; // Student's grade
             float studentScore = 75.3f; // Student's score
             double studentGPA = 3.6; // Student's grade point average
@@ -425,13 +425,14 @@ namespace Finals
 
         public void PrelimExam()
         {
-            Console.WriteLine("NAME" + " " + 18 + " " + 'M');
+            Console.WriteLine("VEGA, KYAN TYREE C." + " " + 18 + " " + 'M');
+            Console.WriteLine("ZENAROSA, JAY HANS O." + " " + 19 + " " + 'M');
         }
 
         public void MidtermExam()
         {
             // Military time in the range 00:00 to 23:59
-            int militaryTime = 2333; // Military time input
+            int militaryTime = 1833; // Military time input
             int hours = militaryTime / 100; // Extract hours from military time
             string period = hours >= 12 ? "PM" : "AM"; // Determine if the time is AM or PM
 
